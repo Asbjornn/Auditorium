@@ -18,7 +18,7 @@ public class Victory : MonoBehaviour
     public Animator animator;
 
     [Header("Event")]
-    public UnityEvent victoryEvent;
+    public GameEvent victoryEvent;
 
     // Start is called before the first frame update
     void Start()
@@ -73,7 +73,8 @@ public class Victory : MonoBehaviour
 
     public void EndOfLevel()
     {
-        victoryEvent.Invoke();
+        victoryEvent.Trigger();
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 
     bool AllVolumeAtMax()

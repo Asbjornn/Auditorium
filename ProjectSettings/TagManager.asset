@@ -8,11 +8,12 @@ TagManager:
   - InsideCircle
   - OutsideCircle
   - MusicBox
+  - Wall
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Wall
   - Water
   - UI
   - Particle

@@ -279,7 +279,7 @@ MonoBehaviour:
   - {fileID: 7469895569500502328}
   - {fileID: 1716412002747404284}
   - {fileID: 2386548388624766407}
-  addVolume: 0.02
+  addVolume: 0.01
   timeWithoutParticles: 2
   volumeReduction: 0.4
 --- !u!1 &4529271161472692819

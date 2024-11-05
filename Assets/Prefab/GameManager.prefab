@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 616170444902475904}
   - component: {fileID: 7717660587723708074}
-  - component: {fileID: 565093774865563295}
+  - component: {fileID: 2830800825013841261}
+  - component: {fileID: 1246358100952426642}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -50,7 +51,21 @@ MonoBehaviour:
   timeWithFullVolume: 2
   chrono: 0
   animator: {fileID: 0}
-  victoryEvent:
+  victoryEvent: {fileID: 11400000, guid: 69c015efdee292e4ca0c08c358c1b067, type: 2}
+--- !u!114 &2830800825013841261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3972935053656094915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 751392e335652cb449392f24279af483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myEvent: {fileID: 11400000, guid: 69c015efdee292e4ca0c08c358c1b067, type: 2}
+  callback:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
@@ -66,30 +81,18 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Victory
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Victory
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &565093774865563295
+--- !u!114 &1246358100952426642
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,6 +101,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3972935053656094915}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbbca238dd0c97c4ca81279c342fa025, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f54981788bcdd94b8e1714a335f3c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

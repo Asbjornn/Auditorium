@@ -32,6 +32,11 @@ public class ReturnToPool : MonoBehaviour
 
     private void OnDisable()
     {
+        ReturnInThePool();
+    }
+
+    public void ReturnInThePool()
+    {
         rb2D.velocity = Vector2.zero;
         trailRenderer.Clear();
         trailRenderer.emitting = false;
@@ -44,6 +49,14 @@ public class ReturnToPool : MonoBehaviour
         if(rb2D.velocity.magnitude <= 1f)
         {
             pool.Release(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Wall"))
+        {
+            ReturnInThePool();
         }
     }
 }

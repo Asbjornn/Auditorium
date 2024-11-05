@@ -19,7 +19,7 @@ public class MouseManager : MonoBehaviour
     public float max;
 
     private Vector2 mousePosition;
-    private Vector2 mousePositionWorld;
+    public Vector2 mousePositionWorld;
     private GameObject objectToResize;
     private RaycastHit2D raycastHit;
     private GameObject memoryObject;
@@ -35,7 +35,7 @@ public class MouseManager : MonoBehaviour
                 CircleShape circleShape = memoryObject.GetComponent<CircleShape>();
                 circleShape.Radius = Mathf.Clamp(Vector2.Distance(memoryObject.transform.position, mousePositionWorld), min, max);
 
-                Debug.Log(circleShape.Radius);
+                //Debug.Log(circleShape.Radius);
                 AreaEffector2D areaEffector2D = memoryObject.GetComponent<AreaEffector2D>();
                 areaEffector2D.forceMagnitude = circleShape.Radius * 10;
             }
@@ -49,8 +49,26 @@ public class MouseManager : MonoBehaviour
 
     public void LookMouse(InputAction.CallbackContext context)
     {
-        mousePosition = context.ReadValue<Vector2>();
-        mousePositionWorld = Camera.main.ScreenToWorldPoint(mousePosition);
+
+        switch(context.phase)
+        {
+            case InputActionPhase.Disabled:
+                break;
+            case InputActionPhase.Waiting:
+                break;
+            case InputActionPhase.Started:
+                break;
+            case InputActionPhase.Performed:
+                    mousePosition = context.ReadValue<Vector2>();
+                    mousePositionWorld = Camera.main.ScreenToWorldPoint(mousePosition);
+
+                break;
+            case InputActionPhase.Canceled:
+
+                break;
+            default:
+                break;
+        }
     }
 
     public Transform Pointer(Vector2 mousePos)

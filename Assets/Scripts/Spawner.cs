@@ -8,12 +8,14 @@ public class Spawner : MonoBehaviour
 {
     [Header("Pool Paramater")]
     public GameObject prefabParticle;
-    public float speed;
+    public float speedParticles;
     public int maxPooledItem;
 
     [Header("Spawner Data")]
     public float spawnRate;
     public float spawnRadius;
+
+    public Transform particleContainers;
 
     public IObjectPool<GameObject> poolParticles;
 
@@ -44,7 +46,7 @@ public class Spawner : MonoBehaviour
 
     private GameObject CreateParticles()
     {
-        GameObject particle = Instantiate(prefabParticle);
+        GameObject particle = Instantiate(prefabParticle, particleContainers);
         ReturnToPool rtp = particle.AddComponent<ReturnToPool>();
         rtp.pool = poolParticles;
 
